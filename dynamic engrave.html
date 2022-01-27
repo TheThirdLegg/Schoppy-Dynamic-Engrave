@@ -1,0 +1,33 @@
+<!--Custom Engraving -->
+<p class="line-item-property__field">
+<div id="en">
+   <label for="engraving">Engraving for Plate 1</label>
+   <textarea required class="required" id="engraving" name="properties[Engraving1]"></textarea>
+</div>
+<button type="button" class="add">Add</button>
+<button type="button" class="remove">Remove</button>
+</p>
+<!--Custom Engraving -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+<script>
+   $(document).ready(function() {
+   var wrapper = $("#en"); //Fields wrapper
+   var add_button = $(".add"); //Add button ID
+   var x = 1; //initlal text box count
+   $(add_button).click(function(e) { //on add input button click
+     e.preventDefault();
+       x++; //text box increment
+       $(wrapper).append('<div><label for="engraving">Engraving for plate ' + x + '</label> <textarea required class="required" id="engraving" name="properties[Engraving' + x + ']"></textarea></div>'); //add input box
+   });
+   
+   $(".remove").click(function() {
+    	x--;
+     if (x > 0) {
+       x == 2
+     }
+   	$('#en div:last').remove();
+   });
+   });
+</script>
